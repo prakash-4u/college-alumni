@@ -1,0 +1,39 @@
+body {
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+}
+.main_section {
+  background: url("./images/mainBackground.jpg");
+  height: 100vh;
+}
+.nav {
+  overflow: hidden;
+  background: #fff;
+}
+.nav a {
+  float: left;
+  color: #000;
+  text-align: right;
+  padding: 10px 10px;
+  font-size: 14px;
+  width: 100px;
+  text-decoration: none;
+  font-weight: bold;
+  background-repeat: no-repeat;
+}
+.nav a:hover {
+  color: blue;
+}
+.a {
+  text-align: center;
+}
+.ab {
+  text-align: center;
+  font-size: xx-large;
+  color: #000;
+}
+#abc {
+  text-align: center;
+}

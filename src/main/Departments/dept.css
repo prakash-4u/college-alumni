@@ -1,0 +1,29 @@
+body {
+  background-image: url("../images/back.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+img {
+  border-radius: 50%;
+}
+.ab {
+  width: 100%;
+}
+.card {
+  width: 25%;
+  float: left;
+  margin: 3rem;
+}
+h1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+h3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
