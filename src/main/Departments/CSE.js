@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./dept.css";
 
@@ -47,24 +47,44 @@ export default function CSE() {
       ctc: "CTC: 22 LPA",
     },
   ];
+  const [filter, setFilter] = useState("");
   return (
     <div className="ab">
-      {alumni.map((data) => (
-        <div className="card">
-          <Link to={"/alumni/cse" + data.id}>
-            <img
-              id={data.id}
-              src={data.src}
-              alt=""
-              height="350px"
-              width="350px"
-            />
-          </Link>
-          <h1 align="center">{data.name}</h1>
-          <h2 align="center">{data.company}</h2>
-          <h3 align="center">{data.ctc}</h3>
-        </div>
-      ))}
+      <div className="search">
+        <input
+          placeholder="Search by name or company"
+          className="searchBar"
+          onChange={(event) => setFilter(event.target.value)}
+        />
+      </div>
+      {alumni
+        .filter((data) => {
+          if (filter === "") {
+            return data;
+          } else if (
+            data.name.toLowerCase().includes(filter.toLowerCase()) ||
+            data.company.toLowerCase().includes(filter.toLowerCase())
+          ) {
+            return data;
+          }
+          return null;
+        })
+        .map((data) => (
+          <div className="card">
+            <Link to={"/alumni/cse" + data.id}>
+              <img
+                id={data.id}
+                src={data.src}
+                alt=""
+                height="350px"
+                width="350px"
+              />
+            </Link>
+            <h1 align="center">{data.name}</h1>
+            <h2 align="center">{data.company}</h2>
+            <h3 align="center">{data.ctc}</h3>
+          </div>
+        ))}
     </div>
   );
 }
